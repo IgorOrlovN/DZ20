@@ -24,7 +24,7 @@ public:
 	float ElementSize;
 
 	UPROPERTY()
-	TArray<ASnakeElementBase> SnakeElements;
+	TArray<ASnakeElementBase*> SnakeElements;
 
 protected:
 	// Called when the game starts or when spawned
@@ -34,6 +34,6 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	void AddSnakeElement();
+	void AddSnakeElement(int ElementsNum = 1);
 
 };

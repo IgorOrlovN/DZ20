@@ -16,6 +16,7 @@ ASnakeBase::ASnakeBase()
 void ASnakeBase::BeginPlay()
 {
 	Super::BeginPlay();
+	AddSnakeElement(4);
 	//GetWorld()->SpawnActor<ASnakeElementBase>(SnakeElementClass, GetActorTransform());
 	
 }
@@ -27,12 +28,15 @@ void ASnakeBase::Tick(float DeltaTime)
 
 }
 
-void ASnakeBase::AddSnakeElement()
+void ASnakeBase::AddSnakeElement(int ElementsNum)
 {
 	//SnakeElements.Num()*ElementSize;
+	for (int i = 0; i < ElementsNum; ++i)
+	{
 	FVector NewLocation(SnakeElements.Num() * ElementSize, 0, 0);
 	FTransform NewTransform(NewLocation);
 	auto NewSnakeElem = GetWorld()->SpawnActor<ASnakeElementBase>(SnakeElementClass, NewTransform);
 	SnakeElements.Add(NewSnakeElem);
+	}
 }
 
