@@ -10,9 +10,9 @@ ASnakeBase::ASnakeBase()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-	ElementSize = 100.f;
+	ElementSize = 10.f;
 	MovementSpeed = 10.f;
-	LastMoveDirection = EMovementDerection::UP;
+	LastMoveDirection = EMovementDerection::DOWN;
 }
 
 // Called when the game starts or when spawned
@@ -58,16 +58,16 @@ void ASnakeBase::Move()
 	switch (LastMoveDirection)
 	{
 	case EMovementDerection::UP:
-		MovementVector.X += MovementSpeed;
+		MovementVector.X += ElementSize;
 		break;
 	case EMovementDerection::DOWN:
-		MovementVector.X -= MovementSpeed;
+		MovementVector.X -= ElementSize;
 		break;
 	case EMovementDerection::LEFT:
-		MovementVector.Y += MovementSpeed;
+		MovementVector.Y += ElementSize;
 		break;
 	case EMovementDerection::RIGHT:
-		MovementVector.Y -= MovementSpeed;
+		MovementVector.Y -= ElementSize;
 		break;
 	}
 
