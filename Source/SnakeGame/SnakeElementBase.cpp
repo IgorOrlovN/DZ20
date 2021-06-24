@@ -44,7 +44,7 @@ void ASnakeElementBase::Interact(AActor* Interactor, bool bIsHead)
 	}
 }
 
-void HandleBeginOverlap(UPrimitiveComponent* OverlappedComponent,
+void ASnakeElementBase::HandleBeginOverlap(UPrimitiveComponent* OverlappedComponent,
 	AActor* OtherActor,
 	UPrimitiveComponent* OtherComp,
 	int32 OtherBodyIndex,

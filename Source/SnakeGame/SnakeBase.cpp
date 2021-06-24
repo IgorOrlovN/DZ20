@@ -12,7 +12,7 @@ ASnakeBase::ASnakeBase()
 	PrimaryActorTick.bCanEverTick = true;
 	ElementSize = 100.f;
 	MovementSpeed = 10.f;
-	LastMoveDirection = EMovementDerection::DOWN;
+	LastMoveDirection = EMovementDerection::UP;
 }
 
 // Called when the game starts or when spawned
@@ -88,7 +88,7 @@ void ASnakeBase::Move()
 
 }
 
-void ASnakeBase::SnakeElementOverlap(ASnakeElementBase* OverlappedElement)
+void ASnakeBase::SnakeElementOverlap(ASnakeElementBase* OverlappedElement, AActor* Other)
 {
 	if (IsValid(OverlappedElement))
 	{
